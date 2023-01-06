@@ -8,5 +8,9 @@ return {
 			conditionals = { "bold" },
 			keywords = { "bold" },
 		},
+		integrations = {
+			telescope = true,
+			which_key = true,
+		},
 	},
 }

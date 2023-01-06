@@ -19,6 +19,7 @@ return {
 		["N"] = { "Nzzzv", "Previous result" },
 		["n"] = { "nzzzv", "Next result" },
 		["Q"] = { "gq", "Format" },
+		["S"] = { "<NOP>", "Nothing" },
 		["X"] = { "\"_X", "Backspace" },
 		["x"] = { "\"_x", "Delete" },
 		["<C-Q>"] = { "mzgggqG`z", "Format whole document" },
@@ -45,6 +46,14 @@ return {
 			["W"] = { "<CMD>tabclose<CR>", "Close tab" },
 			["w"] = { "<CMD>close<CR>", "Close buffer" },
 			["Z"] = "Save and quit"  -- Default
+		},
+		-- Telescope
+		["<Leader>f"] = {
+			name = "Telescope",
+			["f"] = { "<CMD>Telescope find_files<CR>", "Open file finder" },
+			["h"] = { "<CMD>Telescope help_tags<CR>", "Open help search" },
+			["k"] = { "<CMD>Telescope live_grep<CR>", "Open keyword search" },
+			["s"] = { "<CMD>Telescope grep_string<CR>", "Search for word" },
 		},
 	},
 	v = {
