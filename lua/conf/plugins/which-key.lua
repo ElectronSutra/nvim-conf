@@ -15,5 +15,9 @@ return {
 				filetypes = { "TelescopePrompt" },
 			},
 		})
+		-- wk.register(require("conf.settings.keymaps"))
+		for mode, maps in pairs(require("conf.settings.keymaps")) do
+			wk.register(maps, { ["mode"] = mode })
+		end
 	end,
 }

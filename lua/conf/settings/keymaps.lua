@@ -1,0 +1,62 @@
+--[[
+Define maps using which-key syntax:
+	["first_key"] = {
+		name = "name_of_group",
+		["second_key_1"] = { "cmd_str", "desc" },
+		["second_key_2"] = { "cmd_str", "desc" },
+		etc.
+	}
+--]]
+
+return {
+	-- Top level specifies mode:
+	--   n : normal mode
+	--   v : visual mode
+	n = {
+		-- Overrides
+		["<Esc>"] = { "<CMD>nohl<CR>", "Clear highlights" }, -- Augment esc in normal mode
+		["J"] = { "mzJ`z", "Join lines" },
+		["N"] = { "Nzzzv", "Previous result" },
+		["n"] = { "nzzzv", "Next result" },
+		["Q"] = { "gq", "Format" },
+		["X"] = { "\"_X", "Backspace" },
+		["x"] = { "\"_x", "Delete" },
+		["<C-Q>"] = { "mzgggqG`z", "Format whole document" },
+		["<C-=>"] = { "mzgg=G`z", "Autoindent whole document" },
+		["<C-D>"] = { "<C-D>zz", "Halfpage down" },
+		["<C-U>"] = { "<C-U>zz", "Halfpage up" },
+		["<M-Y>"] = { "\"+Y", "Yank until end-of-line into clipboard" },
+		["<M-y>"] = { "\"+y", "Yank into clipboard" },
+		["<M-P>"] = { "\"+P", "Paste from clipboard (preceding)" },
+		["<M-p>"] = { "\"+p", "Paste from clipboard (following)" },
+		-- Z commands
+		["Z"] = {
+			name = "Windowing",
+			["b"] = { "<CMD>new<CR>", "New buffer (below)" },
+			["N"] = { "<CMD>tabnew<CR>", "New tab" },
+			["n"] = { "<CMD>vnew<CR>", "New buffer" },
+			["O"] = { "<CMD>tabonly<CR>", "Only this tab" },
+			["o"] = { "<CMD>only<CR>", "Only this buffer" },
+			["Q"] = "Quit this (force)",  -- Default mapping, just desc
+			["q"] = { "<CMD>q<CR>", "Quit this (safe)" },
+			["S"] = { "<CMD>wa<CR>", "Save all" },
+			["s"] = { "<CMD>w<CR>", "Save this" },
+			["X"] = { "<CMD>qa!<CR>", "Quit everything (force)" },
+			["W"] = { "<CMD>tabclose<CR>", "Close tab" },
+			["w"] = { "<CMD>close<CR>", "Close buffer" },
+			["Z"] = "Save and quit"  -- Default
+		},
+	},
+	v = {
+		-- Overrides
+		["J"] = { ":m '>+1<CR>gv=gv", "Swap line down" },
+		["K"] = { ":m '<-2<CR>gv=gv", "Swap line up" },
+		["Q"] = { "gq", "Format selection" },
+		["X"] = { "\"_X", "Backspace" },
+		["x"] = { "\"_x", "Delete" },
+		["<M-Y>"] = { "\"+Y", "Yank until end-of-line into clipboard" },
+		["<M-y>"] = { "\"+y", "Yank into clipboard" },
+		["<M-P>"] = { "\"+P", "Paste from clipboard (preceding)" },
+		["<M-p>"] = { "\"+p", "Paste from clipboard (following)" },
+	},
+}
