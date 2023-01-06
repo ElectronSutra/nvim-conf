@@ -60,6 +60,8 @@ return {
 			name = "Modals",
 			["b"] = { "<CMD>Neotree source=buffers position=current toggle=true<CR>", "Open buffer list" },
 			["e"] = { "<CMD>Neotree source=filesystem position=current toggle=true<CR>", "Open file explorer" },
+			["l"] = { "<CMD>LspInfo<CR>", "Open LSP Info" },
+			["m"] = { "<CMD>Mason<CR>", "Open Mason" },
 		},
 	},
 	v = {

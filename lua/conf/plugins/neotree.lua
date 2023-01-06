@@ -72,7 +72,7 @@ return {
 					["<Esc>"] = "close_window",
 					["g?"] = "show_help",
 					["x"] = "buffer_delete",
-					["bd"] = "buffer_delete"
+					["bd"] = "buffer_delete",
 				},
 			},
 		},
@@ -93,5 +93,5 @@ return {
 				},
 			},
 		},
-	}
+	},
 }
