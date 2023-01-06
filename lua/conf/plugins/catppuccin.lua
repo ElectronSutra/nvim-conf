@@ -9,6 +9,7 @@ return {
 			keywords = { "bold" },
 		},
 		integrations = {
+			mason = true,
 			neotree = true,
 			telescope = true,
 			which_key = true,
