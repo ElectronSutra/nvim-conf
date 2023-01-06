@@ -40,6 +40,7 @@ return {
 					["g?"] = "show_help",
 					["E"] = "expand_all_nodes",
 					["W"] = "close_all_nodes",
+					["<BS>"] = "navigate_up",
 					["-"] = "navigate_up",
 					["<S-CR>"] = "set_root",
 					["H"] = "toggle_hidden",

@@ -55,6 +55,12 @@ return {
 			["k"] = { "<CMD>Telescope live_grep<CR>", "Open keyword search" },
 			["s"] = { "<CMD>Telescope grep_string<CR>", "Search for word" },
 		},
+		-- Modals
+		["<Leader>k"] = {
+			name = "Modals",
+			["b"] = { "<CMD>Neotree source=buffers position=current toggle=true<CR>", "Open buffer list" },
+			["e"] = { "<CMD>Neotree source=filesystem position=current toggle=true<CR>", "Open file explorer" },
+		},
 	},
 	v = {
 		-- Overrides
