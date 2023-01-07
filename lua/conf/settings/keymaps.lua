@@ -77,6 +77,7 @@ return {
 			["l"] = { "<CMD>LspInfo<CR>", "Open LSP Info" },
 			["m"] = { "<CMD>Mason<CR>", "Open Mason" },
 			["t"] = { "<CMD>ToggleTerm<CR>", "Open terminal" },
+			["z"] = { "<CMD>Lazy<CR>", "Open Lazy" },
 		},
 	},
 	v = {
