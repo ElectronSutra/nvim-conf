@@ -79,6 +79,28 @@ return {
 			["t"] = { "<CMD>ToggleTerm<CR>", "Open terminal" },
 			["z"] = { "<CMD>Lazy<CR>", "Open Lazy" },
 		},
+		-- Silicon
+		["<Leader>s"] = {
+			name = "SiliconVisualizer",
+			["c"] = {
+				function()
+					require("silicon").visualise_api()
+				end,
+				"Capture highlighted area",
+			},
+			["f"] = {
+				function()
+					require("silicon").visualise_api({ show_buf = true })
+				end,
+				"Capture whole buffer",
+			},
+			["y"] = {
+				function()
+					require("silicon").visualise_api({ to_clip = true })
+				end,
+				"Yank selected to clipboard",
+			},
+		},
 	},
 	v = {
 		-- Overrides
