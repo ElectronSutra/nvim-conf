@@ -87,4 +87,7 @@ return {
 		["<M-P>"] = { '"+P', "Paste from clipboard (preceding)" },
 		["<M-p>"] = { '"+p', "Paste from clipboard (following)" },
 	},
+	t = {
+		["<C-Esc>"] = { "<C-Bslash><C-n>", "Switch to terminal-normal mode" },
+	},
 }
