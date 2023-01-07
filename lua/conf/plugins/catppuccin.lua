@@ -9,6 +9,7 @@ return {
 			keywords = { "bold" },
 		},
 		integrations = {
+			gitsigns = true,
 			mason = true,
 			neotree = true,
 			telescope = true,
