@@ -43,6 +43,10 @@ return {
 		["Z"] = {
 			name = "Windowing",
 			["b"] = { "<CMD>new<CR>", "New buffer (below)" },
+			["h"] = { "<CMD>NavigatorLeft<CR>", "Move ←" },
+			["j"] = { "<CMD>NavigatorDown<CR>", "Move ↓" },
+			["k"] = { "<CMD>NavigatorUp<CR>", "Move ↑" },
+			["l"] = { "<CMD>NavigatorRight<CR>", "Move ↑" },
 			["N"] = { "<CMD>tabnew<CR>", "New tab" },
 			["n"] = { "<CMD>vnew<CR>", "New buffer" },
 			["O"] = { "<CMD>tabonly<CR>", "Only this tab" },
