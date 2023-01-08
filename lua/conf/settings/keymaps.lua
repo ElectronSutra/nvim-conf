@@ -66,6 +66,7 @@ return {
 			["f"] = { "<CMD>Telescope find_files<CR>", "Open file finder" },
 			["h"] = { "<CMD>Telescope help_tags<CR>", "Open help search" },
 			["k"] = { "<CMD>Telescope live_grep<CR>", "Open keyword search" },
+			["r"] = { "<CMD>Telescope oldfiles<CR>", "Open recent files" },
 			["s"] = { "<CMD>Telescope grep_string<CR>", "Search for word" },
 		},
 		-- Modals
@@ -101,6 +102,15 @@ return {
 				end,
 				"Yank selected to clipboard",
 			},
+		},
+		-- Tools and Panels
+		["<Leader>t"] = {
+			name = "Twilights",
+			["d"] = { "<CMD>TroubleToggle document_diagnostics<CR>", "Toggle diagnostics for document" },
+			["i"] = { "<CMD>Twilight<CR>", "Toggle Twilight highlighting" },
+			["q"] = { "<CMD>TroubleToggle quickfix<CR>", "Toggle quickfixes panel" },
+			["w"] = { "<CMD>TroubleToggle workspace_diagnostics<CR>", "Toggle diagnostics for workspace" },
+			["z"] = { "<CMD>ZenMode<CR>", "Toggle zen mode" },
 		},
 	},
 	v = {
