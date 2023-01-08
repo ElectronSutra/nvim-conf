@@ -102,6 +102,11 @@ return {
 				"Yank selected to clipboard",
 			},
 		},
+		-- Twilight
+		["<Leader>t"] = {
+			name = "Twilights",
+			["w"] = { "<CMD>Twilight<CR>", "Toggle Twilight highlighting" },
+		},
 	},
 	v = {
 		-- Overrides
