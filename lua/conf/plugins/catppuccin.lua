@@ -10,6 +10,9 @@ return {
 		},
 		integrations = {
 			gitsigns = true,
+			indent_blankline = {
+				enabled = true,
+			},
 			mason = true,
 			neotree = true,
 			telescope = true,
