@@ -5,7 +5,7 @@ M.add_dependency = function(spec, new_dependency)
 	if not spec.dependencies then
 		spec.dependencies = {}
 	end
-	table.insert(spec.dependencies, new_dependency)
+	return table.insert(spec.dependencies, new_dependency)
 end
 
 return M
