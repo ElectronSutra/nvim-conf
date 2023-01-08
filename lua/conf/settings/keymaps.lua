@@ -72,6 +72,7 @@ return {
 		["<Leader>k"] = {
 			name = "Modals",
 			["b"] = { "<CMD>Neotree source=buffers position=current toggle=true<CR>", "Open buffer list" },
+			["d"] = { "<CMD>DiffviewOpen<CR>", "Open diff view of all files" },
 			["e"] = { "<CMD>Neotree source=filesystem position=current toggle=true<CR>", "Open file explorer" },
 			["g"] = { toggle_lazygit, "Open Lazygit" },
 			["l"] = { "<CMD>LspInfo<CR>", "Open LSP Info" },
