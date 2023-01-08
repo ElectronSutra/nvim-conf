@@ -17,3 +17,6 @@ vim.opt.wrap = true
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+
+-- Settings for specific plugins
+vim.diagnostic.config({ virtual_text = false }) -- Let lsp_lines handle the errors instead
