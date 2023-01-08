@@ -142,6 +142,7 @@ return {
 			name = "Tools",
 			["d"] = { "<CMD>TroubleToggle document_diagnostics<CR>", "Toggle diagnostics for document" },
 			["i"] = { "<CMD>Twilight<CR>", "Toggle Twilight highlighting" },
+			["n"] = { "<CMD>NoNeckPain<CR>", "Toggle center buffer on screen" },
 			["q"] = { "<CMD>TroubleToggle quickfix<CR>", "Toggle quickfixes panel" },
 			["w"] = { "<CMD>TroubleToggle workspace_diagnostics<CR>", "Toggle diagnostics for workspace" },
 			["z"] = { "<CMD>ZenMode<CR>", "Toggle zen mode" },
