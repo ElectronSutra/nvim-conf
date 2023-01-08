@@ -13,8 +13,10 @@ return {
 			indent_blankline = {
 				enabled = true,
 			},
+			lsp_trouble = true,
 			mason = true,
 			neotree = true,
+			notify = true,
 			telescope = true,
 			treesitter = true,
 			which_key = true,
