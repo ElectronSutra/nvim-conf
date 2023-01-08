@@ -110,6 +110,7 @@ return {
 			["i"] = { "<CMD>Twilight<CR>", "Toggle Twilight highlighting" },
 			["q"] = { "<CMD>TroubleToggle quickfix<CR>", "Toggle quickfixes panel" },
 			["w"] = { "<CMD>TroubleToggle workspace_diagnostics<CR>", "Toggle diagnostics for workspace" },
+			["z"] = { "<CMD>ZenMode<CR>", "Toggle zen mode" },
 		},
 	},
 	v = {
