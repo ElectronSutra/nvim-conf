@@ -13,6 +13,7 @@ return {
 			mason = true,
 			neotree = true,
 			telescope = true,
+			treesitter = true,
 			which_key = true,
 		},
 	},
