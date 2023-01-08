@@ -107,8 +107,8 @@ return {
 		["<Leader>t"] = {
 			name = "Twilights",
 			["d"] = { "<CMD>TroubleToggle document_diagnostics<CR>", "Toggle diagnostics for document" },
+			["i"] = { "<CMD>Twilight<CR>", "Toggle Twilight highlighting" },
 			["q"] = { "<CMD>TroubleToggle quickfix<CR>", "Toggle quickfixes panel" },
-			["W"] = { "<CMD>Twilight<CR>", "Toggle Twilight highlighting" },
 			["w"] = { "<CMD>TroubleToggle workspace_diagnostics<CR>", "Toggle diagnostics for workspace" },
 		},
 	},

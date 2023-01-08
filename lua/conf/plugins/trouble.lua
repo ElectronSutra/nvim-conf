@@ -1,7 +1,7 @@
 return {
 	"folke/trouble.nvim",
 	config = {
-		position = "right",
+		-- position = "right",
 		auto_close = true,
 	},
 }
