@@ -9,6 +9,7 @@ return {
 			keywords = { "bold" },
 		},
 		integrations = {
+			aerial = true,
 			gitsigns = true,
 			indent_blankline = {
 				enabled = true,

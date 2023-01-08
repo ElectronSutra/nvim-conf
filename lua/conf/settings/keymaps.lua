@@ -10,6 +10,8 @@ Define maps using which-key syntax:
 
 --#region
 -- Custom functions for calling in maps
+-- TODO: Pullout functions from maps further down and put them up here
+-- TODO: Add a function for aerial `focus`
 local Terminal = require("toggleterm.terminal").Terminal
 local lazygit = Terminal:new({ cmd = "lazygit", direction = "float", close_on_exit = true })
 local toggle_lazygit = function()
@@ -67,6 +69,15 @@ return {
 			["W"] = { "<CMD>tabclose<CR>", "Close tab" },
 			["w"] = { "<CMD>close<CR>", "Close buffer" },
 			["Z"] = "Save and quit", -- Default
+		},
+		-- Aerial
+		["<Leader>a"] = {
+			name = "Aerial",
+			["E"] = { "<CMD>AerialToggle!<CR>", "Toggle Aerial panel (do not jump cursor)" },
+			["e"] = { "<CMD>AerialToggle<CR>", "Toggle Aerial panel" },
+			-- ["f"] = { "<CMD>AerialFocus<CR>", "Jump into Aerial panel if open" },
+			["N"] = { "<CMD>AerialPrev<CR>", "Jump to previous Aerial result" },
+			["n"] = { "<CMD>AerialNext<CR>", "Jump to next Aerial presult" },
 		},
 		-- Telescope
 		["<Leader>f"] = {
