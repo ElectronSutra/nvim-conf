@@ -15,6 +15,14 @@ local lazygit = Terminal:new({ cmd = "lazygit", direction = "float", close_on_ex
 local toggle_lazygit = function()
 	lazygit:toggle()
 end
+local harpoon_ui = require("harpoon.ui")
+local harpoon_mark = require("harpoon.mark")
+local harpoon_go_to = function(i)
+	-- Have to curry here b/c Neovim needs a 0-arity function to call on the map
+	return function()
+		harpoon_ui.nav_file(i)
+	end
+end
 --#endregion
 
 return {
@@ -69,6 +77,32 @@ return {
 			["r"] = { "<CMD>Telescope oldfiles<CR>", "Open recent files" },
 			["s"] = { "<CMD>Telescope grep_string<CR>", "Search for word" },
 		},
+		-- Harpoon
+		["<Leader>h"] = {
+			name = "Harpoon",
+			["h"] = { harpoon_ui.toggle_quick_menu, "Show Harpoon skewer list" },
+			["m"] = { harpoon_mark.add_file, "Skewer file in Harpoon" },
+			["a"] = { harpoon_go_to(1), "Jump to file 1" },
+			["1"] = { harpoon_go_to(1), "Jump to file 1" },
+			["s"] = { harpoon_go_to(2), "Jump to file 2" },
+			["2"] = { harpoon_go_to(2), "Jump to file 2" },
+			["d"] = { harpoon_go_to(3), "Jump to file 3" },
+			["3"] = { harpoon_go_to(3), "Jump to file 3" },
+			["f"] = { harpoon_go_to(4), "Jump to file 4" },
+			["4"] = { harpoon_go_to(4), "Jump to file 4" },
+			["g"] = { harpoon_go_to(5), "Jump to file 5" },
+			["5"] = { harpoon_go_to(5), "Jump to file 5" },
+			["z"] = { harpoon_go_to(6), "Jump to file 6" },
+			["6"] = { harpoon_go_to(6), "Jump to file 6" },
+			["x"] = { harpoon_go_to(7), "Jump to file 7" },
+			["7"] = { harpoon_go_to(7), "Jump to file 7" },
+			["c"] = { harpoon_go_to(8), "Jump to file 8" },
+			["8"] = { harpoon_go_to(8), "Jump to file 8" },
+			["v"] = { harpoon_go_to(9), "Jump to file 9" },
+			["9"] = { harpoon_go_to(9), "Jump to file 9" },
+			["b"] = { harpoon_go_to(10), "Jump to file 10" },
+			["0"] = { harpoon_go_to(10), "Jump to file 10" },
+		},
 		-- Modals
 		["<Leader>k"] = {
 			name = "Modals",
@@ -105,7 +139,7 @@ return {
 		},
 		-- Tools and Panels
 		["<Leader>t"] = {
-			name = "Twilights",
+			name = "Tools",
 			["d"] = { "<CMD>TroubleToggle document_diagnostics<CR>", "Toggle diagnostics for document" },
 			["i"] = { "<CMD>Twilight<CR>", "Toggle Twilight highlighting" },
 			["q"] = { "<CMD>TroubleToggle quickfix<CR>", "Toggle quickfixes panel" },
