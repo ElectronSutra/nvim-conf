@@ -8,15 +8,13 @@ Define maps using which-key syntax:
 	}
 --]]
 
---#region
 -- Custom functions for calling in maps
--- TODO: Pullout functions from maps further down and put them up here
--- TODO: Add a function for aerial `focus`
 local Terminal = require("toggleterm.terminal").Terminal
 local lazygit = Terminal:new({ cmd = "lazygit", direction = "float", close_on_exit = true })
 local toggle_lazygit = function()
 	lazygit:toggle()
 end
+
 local harpoon_ui = require("harpoon.ui")
 local harpoon_mark = require("harpoon.mark")
 local harpoon_go_to = function(i)
@@ -25,7 +23,19 @@ local harpoon_go_to = function(i)
 		harpoon_ui.nav_file(i)
 	end
 end
---#endregion
+
+local silicon = require("silicon")
+local silicon_screencap = function(args)
+	-- This has to curry so it doesn't call when you try to specify the args
+	return function()
+		silicon.visualise_api(args)
+	end
+end
+
+local aerial = require("aerial")
+local aerial_focus_pane = function()
+	aerial.focus()
+end
 
 return {
 	-- Top level specifies mode:
@@ -75,7 +85,7 @@ return {
 			name = "Aerial",
 			["E"] = { "<CMD>AerialToggle!<CR>", "Toggle Aerial panel (do not jump cursor)" },
 			["e"] = { "<CMD>AerialToggle<CR>", "Toggle Aerial panel" },
-			-- ["f"] = { "<CMD>AerialFocus<CR>", "Jump into Aerial panel if open" },
+			["f"] = { aerial_focus_pane, "Jump into Aerial panel if open" },
 			["N"] = { "<CMD>AerialPrev<CR>", "Jump to previous Aerial result" },
 			["n"] = { "<CMD>AerialNext<CR>", "Jump to next Aerial presult" },
 		},
@@ -129,24 +139,8 @@ return {
 		-- Silicon
 		["<Leader>s"] = {
 			name = "SiliconVisualizer",
-			["c"] = {
-				function()
-					require("silicon").visualise_api()
-				end,
-				"Capture highlighted area",
-			},
-			["f"] = {
-				function()
-					require("silicon").visualise_api({ show_buf = true })
-				end,
-				"Capture whole buffer",
-			},
-			["y"] = {
-				function()
-					require("silicon").visualise_api({ to_clip = true })
-				end,
-				"Yank selected to clipboard",
-			},
+			["b"] = { silicon_screencap({ show_buf = true }), "Capture whole buffer" },
+			["Y"] = { silicon_screencap({ show_buf = true, to_clip = true }), "Capture whole buffer into clipboard" },
 		},
 		-- Tools and Panels
 		["<Leader>t"] = {
@@ -170,6 +164,12 @@ return {
 		["<M-y>"] = { '"+y', "Yank into clipboard" },
 		["<M-P>"] = { '"+P', "Paste from clipboard (preceding)" },
 		["<M-p>"] = { '"+p', "Paste from clipboard (following)" },
+		-- Silicon
+		["<Leader>s"] = {
+			name = "SiliconVisualizer",
+			["c"] = { silicon_screencap({}), "Capture highlighted" },
+			["y"] = { silicon_screencap({ to_clip = true }), "Capture highlighted into clipboard" },
+		},
 	},
 	t = {
 		["<C-Esc>"] = { "<C-Bslash><C-n>", "Switch to terminal-normal mode" },
