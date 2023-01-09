@@ -6,6 +6,7 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	config = {
+		enable_git_status = false, -- Lazygit/diffview handle git things
 		use_default_mappings = false,
 		default_component_configs = {
 			icon = {
@@ -38,8 +39,6 @@ return {
 					["q"] = "close_window",
 					["<Esc>"] = "close_window",
 					["g?"] = "show_help",
-					["E"] = "expand_all_nodes",
-					["W"] = "close_all_nodes",
 					["<BS>"] = "navigate_up",
 					["-"] = "navigate_up",
 					["<S-CR>"] = "set_root",
@@ -59,7 +58,6 @@ return {
 					["p"] = "paste_from_clipboard",
 					["m"] = "move",
 					["<C-r>"] = "refresh",
-					["P"] = "toggle_preview",
 				},
 			},
 		},
@@ -73,23 +71,6 @@ return {
 					["g?"] = "show_help",
 					["x"] = "buffer_delete",
 					["bd"] = "buffer_delete",
-				},
-			},
-		},
-		git_status = {
-			window = {
-				mappings = {
-					["<Space>"] = "toggle_node",
-					["<CR>"] = "open",
-					["q"] = "close_window",
-					["<Esc>"] = "close_window",
-					["g?"] = "show_help",
-					["A"] = "git_add_all",
-					["a"] = "git_add_file",
-					["u"] = "git_unstage_file",
-					["r"] = "git_revert_file",
-					["c"] = "git_commit",
-					["P"] = "git_push",
 				},
 			},
 		},
