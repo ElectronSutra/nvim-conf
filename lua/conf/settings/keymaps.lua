@@ -33,8 +33,8 @@ local silicon_screencap = function(args)
 end
 
 local aerial = require("aerial")
-local aerial_focus_pane = function()
-	aerial.focus()
+local aerial_open_or_focus = function()
+	aerial.open({ focus = true })
 end
 
 return {
@@ -83,9 +83,8 @@ return {
 		-- Aerial
 		["<Leader>a"] = {
 			name = "Aerial",
-			["E"] = { "<CMD>AerialToggle!<CR>", "Toggle Aerial panel (do not jump cursor)" },
-			["e"] = { "<CMD>AerialToggle<CR>", "Toggle Aerial panel" },
-			["f"] = { aerial_focus_pane, "Jump into Aerial panel if open" },
+			["c"] = { "<CMD>AerialClose<CR>", "Close Aerial panel" },
+			["e"] = { aerial_open_or_focus, "Open Aerial panel" },
 			["N"] = { "<CMD>AerialPrev<CR>", "Jump to previous Aerial result" },
 			["n"] = { "<CMD>AerialNext<CR>", "Jump to next Aerial presult" },
 		},
