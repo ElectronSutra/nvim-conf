@@ -2,6 +2,7 @@ vim.opt.autoindent = true
 vim.opt.colorcolumn = "80"
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.cursorline = true
+vim.opt.expandtab = true
 vim.opt.ignorecase = true
 vim.opt.number = true
 vim.opt.relativenumber = true

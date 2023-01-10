@@ -172,6 +172,6 @@ return {
 		},
 	},
 	t = {
-		["<C-Esc>"] = { "<C-Bslash><C-n>", "Switch to terminal-normal mode" },
+		["<Esc>"] = { "<C-Bslash><C-n>", "Switch to terminal-normal mode" },
 	},
 }
