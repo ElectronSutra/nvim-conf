@@ -6,7 +6,7 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	config = {
-		enable_git_status = false, -- Lazygit/diffview handle git things
+		-- enable_git_status = false, -- Lazygit/diffview handle git things
 		use_default_mappings = false,
 		default_component_configs = {
 			icon = {
