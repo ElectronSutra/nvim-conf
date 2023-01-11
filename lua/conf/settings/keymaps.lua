@@ -37,6 +37,11 @@ local aerial_open_or_focus = function()
 	aerial.open({ focus = true })
 end
 
+local persistence = require("persistence")
+local persistence_load_last = function()
+	persistence.load({ last = true })
+end
+
 return {
 	-- Top level specifies mode:
 	--   n : normal mode
@@ -150,6 +155,13 @@ return {
 			["q"] = { "<CMD>TroubleToggle quickfix<CR>", "Toggle quickfixes panel" },
 			["w"] = { "<CMD>TroubleToggle workspace_diagnostics<CR>", "Toggle diagnostics for workspace" },
 			["z"] = { "<CMD>ZenMode<CR>", "Toggle zen mode" },
+		},
+		-- Session management w/ Persistence
+		["<Leader>q"] = {
+			name = "Sessions",
+			["l"] = { persistence_load_last, "Load last persistent session" },
+			["s"] = { persistence.load, "Load last persistent session for this dir" },
+			["x"] = { persistence.stop, "Disable persistence for this session" },
 		},
 	},
 	v = {
