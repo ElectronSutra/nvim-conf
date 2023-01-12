@@ -17,16 +17,16 @@ return {
 		}
 		-- Buttons:
 		dashboard.section.buttons.val = {
-			dashboard.button("n", "New File", "<CMD>ene<CR>"),
-			dashboard.button("e", "Explorer", "<CMD>Neotree source=filesystem position=float toggle=true<CR>"),
-			dashboard.button("f", "Search For File", "<CMD>Telescope find_files<CR>"),
-			dashboard.button("r", "Recent Files", "<CMD>Telescope oldfiles<CR>"),
+			dashboard.button("n", "» New File", "<CMD>ene<CR>"),
+			dashboard.button("e", "» Explorer", "<CMD>Neotree source=filesystem position=float toggle=true<CR>"),
+			dashboard.button("f", "» Search For File", "<CMD>Telescope find_files<CR>"),
+			dashboard.button("r", "» Recent Files", "<CMD>Telescope oldfiles<CR>"),
 			dashboard.button(
 				"s",
-				"Settings",
+				"» Settings",
 				"<CMD>Neotree source=filesystem position=float toggle=true dir=~/.config/nvim<CR>"
 			),
-			dashboard.button("q", "Quit", "<CMD>qa!<CR>"),
+			dashboard.button("q", "» Quit", "<CMD>qa!<CR>"),
 		}
 		dashboard.section.footer.val = fortune()
 		-- Initialize:

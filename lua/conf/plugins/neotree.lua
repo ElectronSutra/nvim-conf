@@ -1,3 +1,5 @@
+local symbology = require("conf.settings.symbology")
+
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	dependencies = {
@@ -10,24 +12,24 @@ return {
 		use_default_mappings = false,
 		default_component_configs = {
 			icon = {
-				folder_closed = " ",
-				folder_open = " ",
-				folder_empty = " ",
+				folder_closed = symbology.collapsible.closed,
+				folder_open = symbology.collapsible.open,
+				folder_empty = symbology.collapsible.empty,
 			},
 			name = {
 				trailing_slash = true,
 			},
 			git_status = {
 				symbols = {
-					added = "A",
-					modified = "M",
-					deleted = "D",
-					renamed = "R",
-					untracked = "U",
-					ignored = "I",
-					unstaged = "~",
-					staged = "+",
-					conflict = "!",
+					added = symbology.git.added,
+					modified = symbology.git.added,
+					deleted = symbology.git.deleted,
+					renamed = symbology.git.renamed,
+					untracked = symbology.git.untracked,
+					ignored = symbology.git.ignored,
+					unstaged = symbology.git.unstaged,
+					staged = symbology.git.staged,
+					conflict = symbology.git.conflicted,
 				},
 			},
 		},

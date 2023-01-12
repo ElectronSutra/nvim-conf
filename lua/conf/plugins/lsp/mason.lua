@@ -1,12 +1,14 @@
+local symbology = require("conf.settings.symbology")
+
 return {
 	"williamboman/mason.nvim",
 	config = {
 		ui = {
 			border = "single",
 			icons = {
-				package_installed = " ",
-				package_pending = " ",
-				package_uninstalled = " ",
+				package_installed = symbology.net.downloaded,
+				package_pending = symbology.net.pending,
+				package_uninstalled = symbology.net.remote,
 			},
 			keymaps = {
 				toggle_package_expand = "<CR>",

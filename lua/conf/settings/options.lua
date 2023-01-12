@@ -1,3 +1,5 @@
+local symbology = require("conf.settings.symbology")
+
 vim.opt.autoindent = true
 vim.opt.colorcolumn = "80"
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
@@ -21,4 +23,19 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 -- Settings for specific plugins
-vim.diagnostic.config({ virtual_text = false }) -- Let lsp_lines handle the errors instead
+vim.fn.sign_define(
+	"DiagnosticSignError",
+	{ text = symbology.diagnostics.Error, texthl = "DiagnosticSignError", numhl = "" }
+)
+vim.fn.sign_define(
+	"DiagnosticSignWarn",
+	{ text = symbology.diagnostics.Warn, texthl = "DiagnosticSignWarn", numhl = "" }
+)
+vim.fn.sign_define(
+	"DiagnosticSignInfo",
+	{ text = symbology.diagnostics.Info, texthl = "DiagnosticSignInfo", numhl = "" }
+)
+vim.fn.sign_define(
+	"DiagnosticSignHint",
+	{ text = symbology.diagnostics.Hint, texthl = "DiagnosticSignHint", numhl = "" }
+)
